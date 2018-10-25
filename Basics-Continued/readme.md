@@ -1,12 +1,12 @@
 ## This lesson covers:
 
-*apply
-*objects
-*Functions are Objects
-*packages
-*pattern matching
-*case classes
-*try-catch-finally
+* apply
+* objects
+* Functions are Objects
+* packages
+* pattern matching
+* case classes
+* try-catch-finally
 
 # apply methods
 apply methods give you a nice syntactic sugar for when a class or object has one main use.
