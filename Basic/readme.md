@@ -2,7 +2,7 @@ http://twitter.github.io/scala_school/basics.html
 
 
 
-Start the Interpreter
+## Start the Interpreter
 Start the included sbt console.
 
 $ sbt console
@@ -14,21 +14,21 @@ Type in expressions to have them evaluated.
 Type :help for more information.
 
 scala>
-Expressions
+## Expressions
 scala> 1 + 1
 res0: Int = 2
 res0 is an automatically created value name given by the interpreter to the result of your expression. It has the type Int and contains the Integer 2.
 
 (Almost) everything in Scala is an expression.
 
-Values
+## Values
 You can give the result of an expression a name.
 
 scala> val two = 1 + 1
 two: Int = 2
 You cannot change the binding to a val.
 
-Variables
+## Variables
 If you need to change the binding, you can use a var instead.
 
 scala> var name = "steve"
@@ -36,7 +36,8 @@ name: java.lang.String = steve
 
 scala> name = "marius"
 name: java.lang.String = marius
-Functions
+
+## Functions
 You can create functions with def.
 
 scala> def addOne(m: Int): Int = m + 1
@@ -55,7 +56,8 @@ res2: Int = 3
 
 scala> three
 res3: Int = 3
-Anonymous Functions
+
+## Anonymous Functions
 You can create anonymous functions.
 
 scala> (x: Int) => x + 1
@@ -86,7 +88,7 @@ scala> { i: Int =>
 res0: (Int) => Int = <function1>
 You will see this syntax often used when passing an anonymous function as an argument.
 
-Partial application
+## Partial application
 You can partially apply a function with an underscore, which gives you another function. Scala uses the underscore to mean different things in different contexts, but you can usually think of it as an unnamed magical wildcard. In the context of { _ + 2 } it means an unnamed parameter. You can use it like so:
 
 scala> def adder(m: Int, n: Int) = m + n
@@ -98,7 +100,7 @@ scala> add2(3)
 res50: Int = 5
 You can partially apply any argument in the argument list, not just the last one.
 
-Curried functions
+## Curried functions
 Sometimes it makes sense to let people apply some arguments to your function now and others later.
 
 Here’s an example of a function that lets you build multipliers of two numbers together. At one call site, you’ll decide which is the multiplier and at a later call site, you’ll choose a multiplicand.
@@ -126,7 +128,8 @@ addTwo: Int => Int = <function1>
 
 scala> addTwo(4)
 res22: Int = 6
-Variable length arguments
+
+## Variable length arguments
 There is a special syntax for methods that can take parameters of a repeated type. To apply String’s capitalize function to several strings, you might write:
 
 def capitalizeAll(args: String*) = {
@@ -137,7 +140,8 @@ def capitalizeAll(args: String*) = {
 
 scala> capitalizeAll("rarity", "applejack")
 res2: Seq[String] = ArrayBuffer(Rarity, Applejack)
-Classes
+
+## Classes
 scala> class Calculator {
      |   val brand: String = "HP"
      |   def add(m: Int, n: Int): Int = m + n
@@ -154,7 +158,7 @@ scala> calc.brand
 res2: String = "HP"
 Contained are examples defining methods with def and fields with val. Methods are just functions that can access the state of the class.
 
-Constructor
+## Constructor
 Constructors aren’t special methods, they are the code outside of method definitions in your class. Let’s extend our Calculator example to take a constructor argument and use it to initialize internal state.
 
 class Calculator(brand: String) {
@@ -181,10 +185,11 @@ calc: Calculator = Calculator@1e64cc4d
 
 scala> calc.color
 res0: String = black
-Expressions
+
+## Expressions
 Our Calculator example gave an example of how Scala is expression-oriented. The value color was bound based on an if/else expression. Scala is highly expression-oriented: most things are expressions rather than statements.
 
-Aside: Functions vs Methods
+## Aside: Functions vs Methods
 Functions and methods are largely interchangeable. Because functions and methods are so similar, you might not remember whether that thing you call is a function or a method. When you bump into a difference between methods and functions, it might confuse you.
 
 scala> class C {
@@ -205,17 +210,17 @@ When you can call one “function” without parentheses but not another, you mi
 
 In practice, you can do great things in Scala while remaining hazy on the difference between methods and functions. If you’re new to Scala and read explanations of the differences, you might have trouble following them. That doesn’t mean you’re going to have trouble using Scala. It just means that the difference between functions and methods is subtle enough such that explanations tend to dig into deep parts of the language.
 
-Inheritance
+## Inheritance
 class ScientificCalculator(brand: String) extends Calculator(brand) {
   def log(m: Double, base: Double) = math.log(m) / math.log(base)
 }
 See Also Effective Scala points out that a Type alias is better than extends if the subclass isn’t actually different from the superclass. A Tour of Scala describes Subclassing.
 
-Overloading methods
+## Overloading methods
 class EvenMoreScientificCalculator(brand: String) extends ScientificCalculator(brand) {
   def log(m: Int): Double = log(m, math.exp(1))
 }
-Abstract Classes
+## Abstract Classes
 You can define an abstract class, a class that defines some methods but does not implement them. Instead, subclasses that extend the abstract class define these methods. You can’t create an instance of an abstract class.
 
 scala> abstract class Shape {
@@ -235,7 +240,8 @@ scala> val s = new Shape
 
 scala> val c = new Circle(2)
 c: Circle = Circle@65c0035b
-Traits
+
+## Traits
 traits are collections of fields and behaviors that you can extend or mixin to your classes.
 
 trait Car {
