@@ -35,7 +35,7 @@ scala> bar()
 res8: Int = 0
 Here our instance object looks like we’re calling a method. More on that later!
 
-Objects
+## Objects
 Objects are used to hold single instances of a class. Often used for factories.
 
 object Timer {
@@ -59,7 +59,8 @@ class Bar(foo: String)
 object Bar {
   def apply(foo: String) = new Bar(foo)
 }
-Functions are Objects
+
+## Functions are Objects
 In Scala, we talk about object-functional programming often. What does that mean? What is a Function, really?
 
 A Function is a set of traits. Specifically, a function that takes one argument is an instance of a Function1 trait. This trait defines the apply() syntactic sugar we learned earlier, allowing you to call an object like you would a function.
@@ -94,7 +95,8 @@ A nice short-hand for extends Function1[Int, Int] is extends (Int => Int)
 class AddOne extends (Int => Int) {
   def apply(m: Int): Int = m + 1
 }
-Packages
+
+## Packages
 You can organize your code inside of packages.
 
 package com.twitter.example
@@ -120,7 +122,7 @@ scala> object colorHolder {
 defined module colorHolder
 This gives you a small hint that the designers of Scala designed objects to be part of Scala’s module system.
 
-Pattern Matching
+## Pattern Matching
 One of the most useful parts of Scala.
 
 Matching on values
@@ -145,7 +147,7 @@ The _ in the last case statement is a wildcard; it ensures that we can handle an
 
 See Also Effective Scala has opinions about when to use pattern matching and pattern matching formatting. A Tour of Scala describes Pattern Matching
 
-Matching on type
+## Matching on type
 You can use match to handle values of different types differently.
 
 def bigger(o: Any): Any = {
@@ -157,7 +159,8 @@ def bigger(o: Any): Any = {
     case text: String => text + "s"
   }
 }
-Matching on class members
+
+## Matching on class members
 Remember our calculator from earlier.
 
 Let’s classify them according to type.
@@ -172,7 +175,7 @@ def calcType(calc: Calculator) = calc match {
 }
 Wow, that’s painful. Thankfully Scala provides some nice tools specifically for this.
 
-Case Classes
+## Case Classes
 case classes are used to conveniently store and match on the contents of a class. You can construct them without using new.
 
 scala> case class Calculator(brand: String, model: String)
@@ -212,7 +215,8 @@ OR we could simply not specify that it’s a Calculator at all.
   case _ => "Calculator of unknown type"
 OR we could re-bind the matched value with another name
   case c@Calculator(_, _) => "Calculator: %s of unknown type".format(c)
-Exceptions
+  
+## Exceptions
 Exceptions are available in Scala via a try-catch-finally syntax that uses pattern matching.
 
 try {
