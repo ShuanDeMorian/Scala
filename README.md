@@ -9,3 +9,7 @@ Scala combines object-oriented and functional programming in one concise, high-l
 
 ### Characteristic of Functional programming language
 * Immutability : The same output is guaranteed for the same input.
+
+
+참고 : https://engineering.linecorp.com/ko/blog/detail/244
+      http://goscala.tistory.com/236
