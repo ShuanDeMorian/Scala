@@ -1,3 +1,7 @@
+http://twitter.github.io/scala_school/basics.html
+
+
+
 Start the Interpreter
 Start the included sbt console.
 
