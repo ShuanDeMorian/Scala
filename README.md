@@ -11,6 +11,6 @@ Scala combines object-oriented and functional programming in one concise, high-l
 * Immutability : The same output is guaranteed for the same input.
 
 
-참고 : https://engineering.linecorp.com/ko/blog/detail/244
-
-      http://goscala.tistory.com/236
+### 참고 
+* htps://engineering.linecorp.com/ko/blog/detail/244
+* http://goscala.tistory.com/236
